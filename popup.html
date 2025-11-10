@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Skribbl.io Helper</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      :root{--bg:#0f1720;--card:#0b1220;--accent:#1e88e5;--muted:#9aa6b2;--text:#e6eef6}
+      html,body{margin:0;padding:10px;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:var(--text);}
+      .card{background:linear-gradient(180deg,#071422 0%, #06131f 100%);border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);width:320px}
+      h1{font-size:14px;margin:0 0 8px 0;font-weight:600;color:var(--text)}
+      .pattern-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+      .pattern{flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;color:var(--text);font-family:monospace}
+      .hint{font-size:11px;color:var(--muted)}
+      #results{list-style:none;margin:8px 0 0 0;padding:0;max-height:360px;overflow:auto;border-radius:6px}
+      #results li{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.02);cursor:pointer;background:transparent}
+      #results li:hover{background:rgba(255,255,255,0.02)}
+      #results li:active{transform:translateY(1px)}
+      .copied{background:linear-gradient(90deg, rgba(30,136,229,0.15), rgba(30,136,229,0.06));}
+      footer{margin-top:10px;font-size:11px;color:var(--muted);text-align:center}
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Skribbl Helper</h1>
+      <div class="pattern-row">
+        <input id="pattern" class="pattern" placeholder="_a____" readonly />
+      </div>
+      <ul id="results"></ul>
+      <footer>Click a word to copy it to clipboard</footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

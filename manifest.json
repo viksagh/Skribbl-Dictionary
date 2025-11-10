@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Skribbl.io Helper",
+  "version": "1.0",
+  "description": "Shows possible skribbl.io words based on blanks and revealed letters.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": ["https://skribbl.io/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "send-word": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Send stored word to skribbl chat"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://skribbl.io/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
