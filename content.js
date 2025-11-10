@@ -70,3 +70,4 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   }
   // Explicitly ignore other message types to avoid interference
 });
+
